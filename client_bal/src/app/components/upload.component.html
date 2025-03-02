@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-card-content fxLayout="column" fxLayoutAlign="center">
+        <form [formGroup]="form">
+            <table>
+                <tr>
+                    <td>
+                        <button mat-raised-button color="primary">
+                            Select a File
+                            <!-- Hidden file input -->
+                            <input 
+                              type="file" 
+                              (change)="onFileSelected($event)"
+                            >
+                          </button>
+                          
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Comments</mat-label>
+                            <input matInput type="text" size="30" formControlName="comments"/>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       <button mat-raised-button color="primary" type="button"
+                         [routerLink]="['/']">Back</button>
+
+                         <button mat-raised-button color="warning" (click)="upload()" type="submit">Upload</button>
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+
+    </mat-card-content>
+</mat-card>
